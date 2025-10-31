@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Hub</title>
+  <meta name="description" content="A Pages-friendly search hub with backend preview for a whitelist of sites.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>🔎 Search Hub</h1>
+      <p class="muted">Quick launcher for your favorite engines. Optional in-page preview via your own backend proxy (whitelist only).</p>
+    </header>
+
+    <section class="card">
+      <div class="row">
+        <input id="q" placeholder="Search anything..." autofocus>
+        <button id="go" class="btn">Search</button>
+      </div>
+      <div class="engines">
+        <button data-engine="google" class="chip">Google</button>
+        <button data-engine="ddg" class="chip">DuckDuckGo</button>
+        <button data-engine="bing" class="chip">Bing</button>
+        <button data-engine="wiki" class="chip">Wikipedia</button>
+        <button data-engine="yt" class="chip">YouTube</button>
+        <button data-engine="mdn" class="chip">MDN</button>
+        <button data-engine="so" class="chip">Stack Overflow</button>
+      </div>
+      <div class="row small muted">
+        <label class="switch">
+          <input type="checkbox" id="previewToggle">
+          <span>Use backend preview (if allowed)</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Results</h2>
+      <ol id="results" class="results"></ol>
+    </section>
+
+    <section class="card" id="previewCard" hidden>
+      <h2>Preview</h2>
+      <iframe id="preview" title="Preview" sandbox="allow-scripts allow-same-origin allow-forms" referrerpolicy="no-referrer"></iframe>
+    </section>
+
+    <footer class="footer">
+      <span>Static client + your free backend preview.</span>
+    </footer>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
